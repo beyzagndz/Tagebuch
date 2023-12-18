@@ -1,0 +1,35 @@
+package t1;
+import javax.swing.*;
+import java.awt.*;
+
+public class DiaryApp {
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> createAndShowGUI());
+    }
+
+    private static void createAndShowGUI() {
+        JFrame frame = new JFrame("Tagebuch");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+
+
+        JTextArea textArea = new JTextArea();
+        JScrollPane scrollPane = new JScrollPane(textArea);
+
+        JButton changeFontButton = new JButton("Schriftart ändern");
+        JButton searchButton = new JButton("Suchen");
+        JButton uploadPhotoButton = new JButton("Foto hochladen");
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(changeFontButton);
+        buttonPanel.add(searchButton);
+        buttonPanel.add(uploadPhotoButton);
+
+        frame.setLayout(new BorderLayout());
+        frame.add(scrollPane, BorderLayout.CENTER);
+        frame.add(buttonPanel, BorderLayout.SOUTH);
+
+        frame.setVisible(true);
+    }
+}
