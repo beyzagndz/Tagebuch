@@ -18,18 +18,18 @@ public class DiaryApp {
         JTextArea textArea = new JTextArea();
         JScrollPane scrollPane = new JScrollPane(textArea);
 
-        JButton changeFontButton = new JButton("Schriftart ändern");
+        JButton saveButton = new JButton("Speichern");
         JButton searchButton = new JButton("Suchen");
         JButton uploadPhotoButton = new JButton("Foto hochladen");
 
         // Hier wird die Logik-Klasse erstellt und dem ActionListener übergeben
         DiaryLogic diaryLogic = new DiaryLogic(textArea);
-        changeFontButton.addActionListener(diaryLogic);
+        saveButton.addActionListener(diaryLogic);
         searchButton.addActionListener(diaryLogic);
         uploadPhotoButton.addActionListener(diaryLogic);
 
         JPanel buttonPanel = new JPanel();
-        buttonPanel.add(changeFontButton);
+        buttonPanel.add(saveButton);
         buttonPanel.add(searchButton);
         buttonPanel.add(uploadPhotoButton);
 
@@ -40,4 +40,3 @@ public class DiaryApp {
         frame.setVisible(true);
     }
 }
-
