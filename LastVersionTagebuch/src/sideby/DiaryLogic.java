@@ -23,7 +23,7 @@ public class DiaryLogic implements ActionListener {
 
         switch (sourceButton.getText()) {
             case "Speichern":
-                // Implementiere hier die Logik für das Speichern des Eintrags
+                //Logik für das Speichern des Eintrags
                 String entry = textArea.getText();
                 String filePath = "diary.txt";
                 try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
@@ -36,7 +36,7 @@ public class DiaryLogic implements ActionListener {
                 break;
 
             case "Suchen":
-                // Implementiere hier die Logik für das Suchen von Begriffen
+                //Logik für das Suchen von Begriffen
                 String searchTerm = JOptionPane.showInputDialog(null, "Suchbegriff eingeben:");
                 if (searchTerm != null) {
                     String text = textArea.getText();
@@ -50,14 +50,12 @@ public class DiaryLogic implements ActionListener {
                 break;
 
             case "Foto hochladen":
-                // Implementiere hier die Logik für das Hochladen von Fotos
-                // Beispiel: JFileChooser verwenden, um ein Foto auszuwählen
+                //Logik für das Hochladen von Fotos
+                
                 JFileChooser fileChooser = new JFileChooser();
                 int returnVal = fileChooser.showOpenDialog(null);
                 if (returnVal == JFileChooser.APPROVE_OPTION) {
-                    // Hier kannst du die ausgewählte Datei verarbeiten
-                    // File selectedFile = fileChooser.getSelectedFile();
-                    // ... weitere Logik ...
+                   .
                 }
                 break;
         }
