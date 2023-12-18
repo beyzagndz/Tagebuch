@@ -23,7 +23,7 @@ public class DiaryApp {
         JButton searchButton = new JButton("Suchen");
         JButton uploadPhotoButton = new JButton("Foto hochladen");
 
-        // Hier wird die Logik-Klasse erstellt und dem ActionListener übergeben
+        //Logik-Klasse erstellt --> ActionListener übergeben
         DiaryLogic diaryLogic = new DiaryLogic(textArea);
         saveButton.addActionListener(diaryLogic);
         searchButton.addActionListener(diaryLogic);
