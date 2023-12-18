@@ -1,6 +1,8 @@
 package t1;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class DiaryApp {
 
@@ -11,8 +13,7 @@ public class DiaryApp {
     private static void createAndShowGUI() {
         JFrame frame = new JFrame("Tagebuch");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    
-
+        frame.setSize(400, 300);
 
         JTextArea textArea = new JTextArea();
         JScrollPane scrollPane = new JScrollPane(textArea);
@@ -20,6 +21,12 @@ public class DiaryApp {
         JButton changeFontButton = new JButton("Schriftart ändern");
         JButton searchButton = new JButton("Suchen");
         JButton uploadPhotoButton = new JButton("Foto hochladen");
+
+        // Hier wird die Logik-Klasse erstellt und dem ActionListener übergeben
+        DiaryLogic diaryLogic = new DiaryLogic(textArea);
+        changeFontButton.addActionListener(diaryLogic);
+        searchButton.addActionListener(diaryLogic);
+        uploadPhotoButton.addActionListener(diaryLogic);
 
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(changeFontButton);
@@ -33,3 +40,4 @@ public class DiaryApp {
         frame.setVisible(true);
     }
 }
+
